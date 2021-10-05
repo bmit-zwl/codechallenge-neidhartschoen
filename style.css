@@ -1,6 +1,6 @@
 :root {
-    --primaryText: rgba(2, 45, 65);
-    --secondaryText: rgba(114, 108, 101);
+    --primaryText: #052f43;
+    --secondaryText: #666058;
 }
 
 @font-face {
@@ -48,9 +48,9 @@ body {
 h1 {
     font-family: "VistaSlabBook";
     font-weight: 300;
-    margin-top: 60px;
-    margin-bottom: 40px;
-    font-size: 3rem;
+    margin-top: 100pt;
+    margin-bottom: 100pt;
+    font-size: 60pt;
 
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -61,11 +61,13 @@ h1 {
 }
 
 h2 {
+    font-size: 34pt;
     font-family: "VistaSlabBook";
+    font-weight: 700;
 }
 h3 {
+    font-size: 18pt;
     font-family: "VistaSansBook";
-    font-size: 1em;
     font-weight: 500;
 }
 h4 {
@@ -74,42 +76,44 @@ h4 {
 }
 p {
     font-family: "VistaSansBook";
+    font-size: 15pt;
 }
 .container {
     padding: 20px;
-    max-width: 820px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .accordion {
-    border-top: 2px solid rgba(0, 0, 0, 0.125);
+    border-top: 2px solid #979797;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 0;
 }
 
-.accordion object {
+.accordion img {
     transition-duration: 0.2s;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
 }
 
-
-.sub-accordion object {
-    fill: var(--secondaryText);
+.sub-accordion img {
+    filter: grayscale(100%);
+    opacity: 0.7;
 }
 
-.accordion.active object {
+.accordion.active img {
     transform: rotate(45deg);
-}
- 
-.accordion-content.active {
-    /* display: block; */
 }
 
 .accordion-content {
     max-height: 0px;
-    /* display: none; */
-    /* transition-duration: 0.2s; */
     transition: max-height 0.2s ease-out;
     overflow: hidden;
 }
@@ -118,14 +122,33 @@ p {
 
 .sub-accordion h2 {
     color: var(--secondaryText);
-    font-size:1.2em;
+    font-size: 28pt;
 }
 
 .alert {
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.125);
+    padding: 16px;
+    background: rgba(102, 96, 88, 0.2);
+    margin-bottom: 20pt;
 }
 
 .alert p {
     margin: 0;
+}
+
+@media screen and (max-width: 600px){
+    h1 {
+        font-size: 40pt;
+        margin-top:60px;
+        margin-bottom: 40px;
+    }
+    h2 {
+        font-size: 24pt;
+    }
+
+    .sub-accordion h2 {
+        font-size: 20pt;
+    }
+    h3 {
+        font-size: 20pt;
+    }
 }
